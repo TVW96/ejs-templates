@@ -1,1 +1,25 @@
-<h1><%=title%></h1>
+<%- include('../partials/header') %>
+<h1 style="margin-top:10%">Users</h1>
+
+ <table class="table table-hover table-striped">
+	<thead>
+   	<tr>
+      	<th scope="col">First Name</th>
+      	<th scope="col">Last Name</th>
+      	<th scope="col">Email</th>
+   	</tr>
+	</thead>
+ <tbody>
+
+<% users.forEach(function(user){ %>
+  <tr>
+   	<td><a href="users/view/<%= user.id %>"><%= user.first_name %></a></td>
+   	<td><%= user.last_name %></td>
+   	<td><%= user.email %></td>
+  </tr>
+<% }); %>
+
+</tbody>
+</table>
+
+<%- include('../partials/footer') %>
